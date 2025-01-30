@@ -12,8 +12,8 @@ const LoginForm = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid format email').required('Обов’язкове поле'),
-    password: Yup.string().min(6, 'Min. 6 letters').required('Обов’язкове поле'),
+    email: Yup.string().email('Invalid format email').required('Required field'),
+    password: Yup.string().min(6, 'Min. 6 letters').required('Required field'),
   });
 
   const handleSubmit = (values, { resetForm }) => {
