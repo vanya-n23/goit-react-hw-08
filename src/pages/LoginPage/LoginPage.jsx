@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/authOperations';
 import * as Yup from 'yup';
+import './LoginPage.css'
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Невірний формат').required("Обов'язкове поле"),
@@ -17,25 +18,25 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h1>Логін</h1>
+    <div className='container-lp'>
+      <h1>Log in</h1>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={LoginSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <label>
+        <Form className='form-lp'>
+          <label className='label-lp'>
             Email:
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
+            <Field className='input-lp' type="email" name="email" />
+            <ErrorMessage className='error-masage-lp' name="email" component="div" />
           </label>
-          <label>
-            Пароль:
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
+          <label className='label-lp'>
+            Password:
+            <Field className='input-lp' type="password" name="password" />
+            <ErrorMessage className='error-masage-lp' name="password" component="div" />
           </label>
-          <button type="submit">Увійти</button>
+          <button className='btn-lp' type="submit">Log in</button>
         </Form>
       </Formik>
     </div>

@@ -16,6 +16,7 @@
     border-radius: 5px;
     align-items: center;
     margin-top: 20px;
+    justify-content: space-between;
 }
 
 .con-btn {

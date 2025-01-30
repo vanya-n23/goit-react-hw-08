@@ -1,0 +1,10 @@
+.header-main {
+
+display: flex;
+background-color: lightgray;
+height: auto;
+justify-content: space-between;
+padding: 10px;
+border-radius: 4px;
+
+}

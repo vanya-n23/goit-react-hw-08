@@ -1,0 +1,20 @@
+.nac-con {
+
+    display: flex;
+    gap: 15px;
+
+
+}
+
+.nav-article {
+
+    color: black;
+    font-size: 20px;
+
+}
+
+.nav-article:hover {
+
+    color: purple;
+
+}

@@ -1,0 +1,15 @@
+.con-cp {
+
+display: flex;
+flex-direction: column;
+gap: 25px;
+align-items: center;
+padding-top: 50px;
+
+}
+
+.article-cp{
+
+font-size: 20px;
+
+}

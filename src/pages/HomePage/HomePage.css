@@ -1,0 +1,22 @@
+.container-home-page {
+
+display: flex;
+flex-direction: column;
+gap: 20px;
+align-items: center;
+margin-top: 20px;
+
+}
+
+.home-title {
+
+font-size: 50px;
+font-weight: bold;
+
+}
+
+.home-article {
+
+font-size: 25px;
+
+}

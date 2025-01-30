@@ -20,7 +20,7 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>Завантаження...</p>
+    <p>Loadding...</p>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>

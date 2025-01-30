@@ -5,6 +5,7 @@ import { selectContacts, selectIsLoading, selectError } from '../../redux/contac
 import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactList from '../../components/ContactList/ContactList';
 import SearchBox from '../../components/SearchBox/SearchBox';
+import './ContactsPage.css'
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -17,13 +18,13 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Контакти</h1>
+    <div className='con-cp'>
+      <h1>Contacts</h1>
       <ContactForm />
       <SearchBox />
-      {isLoading && <p>Завантаження...</p>}
-      {error && <p>Помилка: {error}</p>}
-      {contacts.length > 0 ? <ContactList /> : <p>Контактів поки що немає.</p>}
+      {isLoading && <p>Loadding...</p>}
+      {error && <p>Error: {error}</p>}
+      {contacts.length > 0 ? <ContactList /> : <p className='article-cp'>No contacts yet.</p>}
     </div>
   );
 };

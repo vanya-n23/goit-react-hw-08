@@ -1,8 +1,10 @@
+import './HomePage.css'
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Ласкаво просимо до Книги контактів!</h1>
-      <p>Тут ви можете зберігати, шукати та керувати своїми контактами.</p>
+    <div className='container-home-page'>
+      <h1 className='home-title'>Welcome to cantact page !</h1>
+      <p className='home-article'>Here you can save and change your contacts</p>
     </div>
   );
 };

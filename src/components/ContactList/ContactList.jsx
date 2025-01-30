@@ -1,32 +1,37 @@
-import  { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFilteredContacts } from '../../redux/contacts/contactsSlice';
-import { fetchContacts, deleteContact } from '../../redux/contacts/contactsOperations';
-import "./ContactList.css"
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contacts/contactsOperations';
+import { selectFilteredContacts } from '../../redux/contacts/contactsSelectors';
+import toast from 'react-hot-toast';
+import './ContactList.css';
 
 const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectFilteredContacts);
-  const loading = useSelector(state => state.contacts.loading);
-  const error = useSelector(state => state.contacts.error);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  const handleDelete = (id) => {
+    if (window.confirm('Are you sure want to delete this contact?')) {
+      dispatch(deleteContact(id));
+      toast.success('Contacts deleted!');
+    }
+  };
 
   return (
-    <>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      <ul className="list-con">
-        {contacts.map(({ id, name, number }) => (
-          <li className="contact-card" key={id}>
-            {name}: {number}
-            <button className='con-btn' onClick={() => dispatch(deleteContact(id))}>Delete</button>
+    <ul className="list-con">
+      {contacts.length > 0 ? (
+        contacts.map(({ id, name, number }) => (
+          <li key={id} className="contact-card">
+            <p>
+              {name}: <span>{number}</span>
+            </p>
+            <button className="con-btn" onClick={() => handleDelete(id)}>
+              Delete
+            </button>
           </li>
-        ))}
-      </ul>
-    </>
+        ))
+      ) : (
+        <p className="message">The list of your contacts are empty</p>
+      )}
+    </ul>
   );
 };
 
