@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { refreshUser } from '../../redux/auth/Operations';
-import { selectIsRefreshing } from '../../redux/auth/authSelectors';
+import { refreshUser } from '../../redux/auth/operations';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
 import Layout from '../Layout';
 import PrivateRoute from '../PrivateRoute';
 import RestrictedRoute from '../RestrictedRoute';
